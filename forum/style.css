@@ -1,0 +1,174 @@
+*{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background: linear-gradient(to right,#f4b661,#f16160);
+}
+
+.login-div{
+    margin: 100px auto;
+    width: 350px;
+    background-color:white;
+    padding: 60px;
+}
+
+.logo{
+   
+    width: 150px;
+    height: 150px; 
+    border-radius: 50%;
+    margin: 0 auto; 
+    margin-bottom: 10px;  
+}
+
+.logo img{
+    width: 100%;
+}
+
+.title, .subtitle{
+text-align: center;
+color: cornflowerblue;
+}
+.title{
+
+    font-weight: bold;
+    font-size: 25px;
+}
+.subtitle{
+    font-size: 18px;
+}
+.forum input{
+
+    font-size: 18px;
+    padding: 10px 20px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+    /* border-color: #1dbf73; */
+}
+
+.username, .password{
+    display: block;
+    border-radius: 30px;
+    /* border: 1px solid rgba(0, 0, 0.2); */
+    border: 2px solid cornflowerblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+button{
+    width: 100%;
+    padding: 12px 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+/* button.btn_disabled{
+
+    background:#727272;
+}
+button.btn_enabled{
+    background: #1dbf73;
+    cursor: pointer;
+} */
+
+/* 
+button.sign_in {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color:cornflowerblue ;
+    color: white;
+    margin-bottom: 5px;
+} */
+
+button.sign_up {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color:cornflowerblue ;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.8;
+}
+.habd{
+    text-align: center;
+    color: cornflowerblue;
+
+}
+.error_msg{
+font-size: 15px;
+text-align: center;
+margin-top: 5px;
+margin-bottom: 5px;
+color: #f74040;
+display: none;
+}
+
+.error{
+    font-size: 16px;
+    text-align: left;
+margin-left: 18px;
+margin-bottom: 4px;
+
+    color: red;
+}
+
+.failure_icon,
+.sucess_icon{
+    opacity: 0;
+}
+
+.failure_icon{
+    color: red;
+
+}
+.sucess_icon{
+    color: green;
+
+}
+
+.name, .email, .password, .Cpassword{
+
+    display: block;
+    border-radius: 30px;
+    /* border: 1px solid rgba(0, 0, 0.2); */
+    border: 2px solid cornflowerblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+button.login{
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color:cornflowerblue ;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+button.register{
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color:cornflowerblue ;
+    color: white;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

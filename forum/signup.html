@@ -1,0 +1,199 @@
+<html>
+<title>Signup Forum</title>
+
+<head>
+    <!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+
+
+    <script src="https://kit.fontawesome.com/8d0279679c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<script>
+    function validateFormm() {
+        let x = document.forms["form"]["name"].value;
+        let y = document.forms["form"]["email"].value;
+        let w = document.forms["form"]["password"].value;
+        let z = document.forms["form"]["cpassword"].value;
+        let failureIcon = document.getElementsByClassName("failure_icon");
+        let succesIcon = document.getElementsByClassName("sucess_icon");
+        let errorMsg = document.getElementsByClassName("error");
+
+        if (x == "" && y == ""&& w=="" && z=="") {
+            //   alert("Email and Password must be filled out");
+            errorMsg[0].innerHTML = "Name must be filled out";
+            errorMsg[1].innerHTML = "Email must be filled out";
+            errorMsg[2].innerHTML = "Password must be filled out";
+            errorMsg[3].innerHTML = "Confirm Password must be filled out";
+
+            failureIcon[0].style.opacity = "1";
+            failureIcon[1].style.opacity = "1";
+            failureIcon[2].style.opacity = "1";
+            failureIcon[3].style.opacity = "1";
+
+            return false;
+        }
+        else
+            errorMsg[0].innerHTML = "";
+            errorMsg[1].innerHTML = "";
+            errorMsg[2].innerHTML = "";
+            errorMsg[3].innerHTML = "";
+        failureIcon[0].style.opacity = "0";
+        failureIcon[1].style.opacity = "0";
+        failureIcon[2].style.opacity = "0";
+        failureIcon[3].style.opacity = "0";
+        
+
+        if (x == "") {
+            errorMsg[0].innerHTML = "Name must be filled out";
+            failureIcon[0].style.opacity = "1";
+            succesIcon[0].style.opacity = "0";
+
+            return false;
+        }
+        else
+            errorMsg[0].innerHTML = "";
+            failureIcon[0].style.opacity = "0";
+            succesIcon[0].style.opacity = "1";
+
+            if (y == "") {
+            errorMsg[1].innerHTML = "Email must be filled out";
+            failureIcon[1].style.opacity = "1";
+            succesIcon[1].style.opacity = "0";
+            return false;
+        }
+        else if(y.length >8){
+            errorMsg[1].innerHTML = "";
+            failureIcon[1].style.opacity = "0";
+            succesIcon[1].style.opacity = "1";}
+            
+        else{
+            errorMsg[1].innerHTML = "Invalid Format";
+            failureIcon[1].style.opacity = "1";
+            succesIcon[1].style.opacity = "0";
+            return false;}
+           
+
+            if (w == "") {
+            errorMsg[2].innerHTML = "Password must be filled out";
+            failureIcon[2].style.opacity = "1";
+            succesIcon[2].style.opacity = "0";
+            return false;
+        }
+        else if (w.length >4){
+            failureIcon[2].style.opacity = "0";
+            succesIcon[2].style.opacity = "1";}
+            else{
+            errorMsg[2].innerHTML = "";
+            errorMsg[2].innerHTML = "Password is too short";
+            failureIcon[2].style.opacity = "1";
+            succesIcon[2].style.opacity = "0";
+            return false;}
+
+            if (z == "") {
+            errorMsg[3].innerHTML = "Confirm Password must be filled out";
+            failureIcon[3].style.opacity = "1";
+            succesIcon[3].style.opacity = "0";
+            return false;
+        }
+        else
+            errorMsg[3].innerHTML = "";
+            failureIcon[3].style.opacity = "0";
+            succesIcon[3].style.opacity = "1";
+            if(w != z){
+            errorMsg[3].innerHTML = "Password doesn't match";
+            failureIcon[3].style.opacity = "1";
+            failureIcon[2].style.opacity = "1";
+            succesIcon[3].style.opacity = "0";
+            succesIcon[2].style.opacity = "0";
+
+
+                return false;
+            }
+            else if(w == z)
+
+            errorMsg[3].innerHTML = "";
+            failureIcon[3].style.opacity = "0";
+            succesIcon[3].style.opacity = "1";
+            failureIcon[2].style.opacity = "0";
+            succesIcon[2].style.opacity = "1";
+
+
+
+    }
+    </script>
+
+<body>
+    <div class="login-div">
+        <div class="logo">
+            <img src="https://c8.alamy.com/comp/2AGTC11/initial-letter-fr-or-rf-logo-vector-designs-2AGTC11.jpg"
+                alt="FR logo" width="150px">
+        </div>
+        <div class="title">FR Registeration</div>
+        <div class="subtitle">Web Devalopment</div>
+
+
+
+        <div class="forum">
+            <form action="process2.php" id="form" method="post" onsubmit="return validateFormm()" >
+                <!-- <form id="form2"> -->
+
+                <div class="name">
+                    <i class="far fa-user"></i>
+                    <input type="text" name="name" id="name" placeholder="Enter Name">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="email">
+                    <i class="far fa-envelope"></i>
+                    <input type="text" name="email" id="email" placeholder="Enter Email">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="password">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="Cpassword">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+
+                <div class="error"></div>
+
+
+
+                <span class="error_msg">Incorrect Username Or Password</span>
+                <!-- <button class="btn_disabled" name="login" type="submit">LOGIN</button> -->
+                <button class="register" type="submit" name="register">Register</button>
+                <!-- <input type="submit" id="login_btn" class="btn_disabled" value="LOGIN" > -->
+
+
+
+
+        </div>
+
+        </form>
+
+    </div>
+
+</body>
+<!-- <script src="main.js"></script> -->
+
+
+</html>

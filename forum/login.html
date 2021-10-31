@@ -1,0 +1,129 @@
+<html>
+<title>Login Forum</title>
+
+<head>
+    <!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+
+
+    <script src="https://kit.fontawesome.com/8d0279679c.js" crossorigin="anonymous"></script>
+
+</head>
+<script>
+    function validateForm() {
+        let x = document.forms["form"]["UName"].value;
+        let y = document.forms["form"]["PWord"].value;
+        let errorMsg = document.getElementsByClassName("error");
+        let succesIcon = document.getElementsByClassName("sucess_icon");
+        let failureIcon = document.getElementsByClassName("failure_icon");
+
+        if (x == "" && y == "") {
+            //   alert("Email and Password must be filled out");
+            errorMsg[2].innerHTML = "Email and Password must be filled out";
+            failureIcon[0].style.opacity = "1";
+            failureIcon[1].style.opacity = "1";
+
+            return false;
+        }
+        else
+            errorMsg[2].innerHTML = "";
+        failureIcon[0].style.opacity = "0";
+        failureIcon[1].style.opacity = "0";
+
+        if (x == "") {
+            //   alert("Email must be filled out");
+            errorMsg[0].innerHTML = "Email must be filled out";
+            failureIcon[0].style.opacity = "1";
+            succesIcon[0].style.opacity = "0";
+            return false;
+        }
+        else
+            errorMsg[0].innerHTML = "";
+        failureIcon[0].style.opacity = "0";
+        succesIcon[0].style.opacity = "1";
+
+
+        if (y == "") {
+            //   alert("Password must be filled out");
+            errorMsg[1].innerHTML = "Password must be filled out";
+            failureIcon[1].style.opacity = "1";
+            succesIcon[1].style.opacity = "0";
+
+            return false;
+        }
+        else {
+            errorMsg[1].innerHTML = "";
+            failureIcon[1].style.opacity = "0";
+            succesIcon[1].style.opacity = "1";
+        }
+        // return true
+
+    }
+</script>
+
+<body>
+    <div class="login-div">
+        <div class="logo">
+            <img src="https://c8.alamy.com/comp/2AGTC11/initial-letter-fr-or-rf-logo-vector-designs-2AGTC11.jpg"
+                alt="FR logo" width="150px">
+        </div>
+        <div class="title">FR Registeration</div>
+        <div class="subtitle">Web Devalopment</div>
+
+
+
+        <div class="forum">
+            <form action="process.php" id="form" method="post" onsubmit="return validateForm()">
+
+                <!-- <form id="form"> -->
+
+                <div class="username">
+                    <i class="far fa-user"></i>
+                    <input type="text" name="UName" id="UName" placeholder="Enter E-mail">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="password">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="PWord" id="PWord" placeholder="Password">
+                    <i class="fas fa-exclamation-circle failure_icon"></i>
+                    <i class="far fa-check-circle sucess_icon"></i>
+                </div>
+                <div class="error"></div>
+
+                <div class="remember">
+                    <input id="remember_me" type="checkbox">
+                    <label for="remember_me">Remember Me</label>
+                </div>
+                <div class="error"></div>
+
+
+
+                <span class="error_msg">Incorrect Username Or Password</span>
+                <!-- <button class="btn_disabled" name="login" type="submit">LOGIN</button> -->
+                <button class="login" type="submit" name="login">LOGIN</button>
+                <!-- <input type="submit" id="login_btn" class="btn_disabled" value="LOGIN" > -->
+
+
+
+
+        </div>
+
+        </form>
+
+        <form action="signup.html" method="post">
+            <button class="sign_up" name="signin">Sign Up</button>
+        </form>
+
+    </div>
+
+</body>
+<!-- <script src="main.js"></script> -->
+
+</html>
